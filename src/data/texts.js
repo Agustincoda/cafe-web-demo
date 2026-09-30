@@ -22,6 +22,33 @@ export const texts = {
     ],
   },
 
+  home: {
+    hero: {
+      cta: "See the menu",
+    },
+    promotions: {
+      title: "Today's promotions",
+    },
+    about: {
+      title: "About us",
+      paragraphs: [
+        "We opened our doors with a simple idea: great coffee doesn't need to be complicated. We work with small roasters, bake everything in-house every morning and take the time to get each cup right.",
+        "Whether you come for a quick espresso on your way to work or a long brunch with friends, there's always a seat for you.",
+      ],
+    },
+    featured: {
+      title: "Customer favorites",
+      subtitle: "The things our regulars order again and again.",
+      cta: "View full menu",
+    },
+  },
+
+  // Shared by the Home featured items and the Menu page
+  menuCard: {
+    originalPrice: "Original price",
+    finalPrice: "Now",
+  },
+
   footer: {
     hoursTitle: "Opening hours",
     followTitle: "Follow us",

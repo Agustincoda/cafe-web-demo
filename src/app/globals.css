@@ -29,6 +29,11 @@
 }
 
 @layer base {
+  /* Keeps anchored sections from hiding under the sticky navbar (h-16 = 4rem). */
+  html {
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-text font-sans;
   }

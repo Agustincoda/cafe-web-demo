@@ -18,6 +18,19 @@ export const siteConfig = {
   // Public URL of the deployed site (used for SEO / social previews).
   url: "https://ember-and-oak.vercel.app",
 
+  // --- Photos -----------------------------------------------------------
+  // Unsplash URLs or files in /public (e.g. "/images/hero.jpg"). Menu photos are in data/menu.js.
+  images: {
+    hero: {
+      src: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=2000&q=80",
+      alt: "Warm coffee shop interior with a lit CAFE sign",
+    },
+    about: {
+      src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+      alt: "Friends toasting with cups of coffee over a wooden table",
+    },
+  },
+
   // --- Colors -----------------------------------------------------------
   // These become CSS variables (--brand-*) and Tailwind classes:
   // bg-primary, text-primary, bg-secondary, bg-background, text-text, text-on-primary...
