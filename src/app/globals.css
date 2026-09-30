@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/*
+ * Brand colors -> Tailwind colors.
+ *
+ * The --brand-* variables are set on <html> by the root layout, using the
+ * values from src/config/site.js. Each line below creates a Tailwind color:
+ *   --color-primary  =>  bg-primary, text-primary, border-primary, ring-primary...
+ *
+ * `inline` makes Tailwind use var(--brand-...) directly, so the config value
+ * is always the one applied.
+ *
+ * `muted` and `surface` are derived automatically with color-mix(), so the
+ * client config only needs the 5 base colors.
+ */
+@theme inline {
+  --color-primary: var(--brand-primary);
+  --color-secondary: var(--brand-secondary);
+  --color-background: var(--brand-background);
+  --color-text: var(--brand-text);
+  --color-on-primary: var(--brand-on-primary);
+
+  /* Softer text (captions, descriptions) and slightly tinted panels (footer, cards). */
+  --color-muted: color-mix(in srgb, var(--brand-text) 70%, var(--brand-background));
+  --color-surface: color-mix(in srgb, var(--brand-secondary) 12%, var(--brand-background));
+
+  --font-sans: var(--font-body-family), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-heading-family), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+
+  /* Visible keyboard focus on every interactive element (a11y). */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
