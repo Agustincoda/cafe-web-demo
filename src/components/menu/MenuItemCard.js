@@ -1,5 +1,6 @@
 import Image from "next/image";
-import DiscountBadge, { dealHoverClasses } from "./DiscountBadge";
+import DealHighlight from "./DealHighlight";
+import DiscountBadge from "./DiscountBadge";
 import PriceTag from "./PriceTag";
 
 /**
@@ -8,11 +9,10 @@ import PriceTag from "./PriceTag";
  */
 export default function MenuItemCard({ item }) {
   const { pricing } = item;
-  // Discounted cards grow on hover to catch the eye.
-  const hover = pricing.discount ? dealHoverClasses : "";
+  const cardStyle = "flex h-full flex-col overflow-hidden rounded-2xl bg-surface";
 
-  return (
-    <article className={`flex h-full flex-col overflow-hidden rounded-2xl bg-surface ${hover}`}>
+  const content = (
+    <>
       <div className="relative aspect-4/3">
         <Image
           src={item.image.src}
@@ -28,6 +28,15 @@ export default function MenuItemCard({ item }) {
         <p className="flex-1 text-muted">{item.description}</p>
         <PriceTag pricing={pricing} />
       </div>
-    </article>
+    </>
+  );
+
+  if (!pricing.discount) return <article className={cardStyle}>{content}</article>;
+
+  // Discounted cards pulse to catch the eye.
+  return (
+    <DealHighlight as="article" className={cardStyle} onClassName="scale-[1.03] shadow-xl ring-2 ring-secondary">
+      {content}
+    </DealHighlight>
   );
 }
