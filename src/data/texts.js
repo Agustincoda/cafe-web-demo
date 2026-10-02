@@ -65,6 +65,7 @@ export const texts = {
     hoursTitle: "Opening hours",
     followTitle: "Follow us",
     rights: "All rights reserved.",
+    designedBy: "Designed by",
     demoNotice: "Demo website. Fictional brand, photos from Unsplash.",
   },
 

@@ -37,7 +37,24 @@ export default function Footer() {
           <p>
             © {year} {siteConfig.name}. {texts.footer.rights}
           </p>
-          <p>{texts.footer.demoNotice}</p>
+          <p>
+            {texts.footer.demoNotice}
+            {siteConfig.credit && (
+              <>
+                {" "}
+                {texts.footer.designedBy}{" "}
+                <a
+                  href={siteConfig.credit.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary underline underline-offset-2 hover:opacity-80"
+                >
+                  {siteConfig.credit.name}
+                </a>
+                .
+              </>
+            )}
+          </p>
         </Container>
       </div>
     </footer>
