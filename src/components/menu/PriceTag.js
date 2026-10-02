@@ -4,16 +4,17 @@ import { formatPrice } from "@/lib/format";
 /**
  * Shows the price of an item. `pricing` comes from getFinalPrice().
  * With a discount: original price crossed out + new price.
+ * `stacked` puts the two prices one under the other (used in the narrow menu rows).
  */
-export default function PriceTag({ pricing }) {
+export default function PriceTag({ pricing, stacked = false }) {
   if (!pricing.discount) {
     return <p className="text-lg font-semibold">{formatPrice(pricing.original)}</p>;
   }
 
   return (
-    <p className="flex items-baseline gap-2">
+    <p className={stacked ? "flex flex-col items-end" : "flex items-baseline gap-2"}>
       {/* <del> = crossed-out text. The sr-only labels tell screen readers which price is which. */}
-      <del className="text-muted">
+      <del className="text-sm text-muted">
         <span className="sr-only">{texts.menuCard.originalPrice}: </span>
         {formatPrice(pricing.original)}
       </del>

@@ -64,10 +64,14 @@ function appliesToItem(discount, item) {
   return (type === "item" && id === item.id) || (type === "category" && id === item.category);
 }
 
-/** Price after one discount, rounded to cents and never below 0. */
+/**
+ * Price after one discount, never below 0.
+ * Rounded to the currency's decimals (siteConfig.currencyDecimals): whole pesos for ARS, cents for USD.
+ */
 function applyDiscount(price, discount) {
   const reduced = discount.type === "percentage" ? price * (1 - discount.value / 100) : price - discount.value;
-  return Math.max(0, Math.round(reduced * 100) / 100);
+  const factor = 10 ** siteConfig.currencyDecimals;
+  return Math.max(0, Math.round(reduced * factor) / factor);
 }
 
 /**
@@ -75,8 +79,8 @@ function applyDiscount(price, discount) {
  *
  * Returns:
  *   {
- *     original: 3.5,       // price from menu.js
- *     final: 2.8,          // price to charge
+ *     original: 3500,      // price from menu.js
+ *     final: 2800,         // price to charge
  *     discount: {...}|null,// the discount used, or null
  *     percentOff: 20,      // rounded % saved, for the "-20%" badge (0 if no discount)
  *   }

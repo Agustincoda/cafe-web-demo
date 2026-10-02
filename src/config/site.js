@@ -11,7 +11,7 @@ export const siteConfig = {
   name: "Ember & Oak Coffee",
   tagline: "Slow coffee for fast mornings",
   description:
-    "A neighborhood coffee shop serving specialty coffee, loose-leaf tea and fresh pastries baked every morning.",
+    "A neighborhood Argentine café serving specialty coffee, homemade patisserie and fresh savory dishes.",
   // Optional logo in /public (e.g. "/logo.svg"). When null, the brand name is shown as text.
   logo: null,
 
@@ -44,8 +44,11 @@ export const siteConfig = {
   },
 
   // --- Locale / money / time -------------------------------------------
-  locale: "en-US", // used to format prices
-  currency: "USD", // ISO code: "USD", "EUR", "ARS"...
+  // Price format. "es-AR" + "ARS" + 0 decimals => "$ 4.200"
+  // For dollars use: locale "en-US", currency "USD", currencyDecimals 2 => "$4.20"
+  locale: "es-AR",
+  currency: "ARS", // ISO code: "ARS", "USD", "EUR"...
+  currencyDecimals: 0,
   // The shop's timezone. Promotions (dates and happy hours) are checked in this
   // timezone, no matter where the visitor or the server is.
   timezone: "America/Argentina/Buenos_Aires",
@@ -81,11 +84,11 @@ export const siteConfig = {
     titleTemplate: "%s | Ember & Oak Coffee",
     defaultTitle: "Ember & Oak Coffee | Specialty coffee & pastries",
     description:
-      "Specialty coffee, loose-leaf tea and fresh pastries in the heart of the neighborhood. See our menu, promotions and opening hours.",
+      "Specialty coffee, homemade patisserie and savory dishes in the heart of the neighborhood. See our menu, promotions and opening hours.",
     pages: {
       menu: {
         title: "Menu",
-        description: "Our full menu: coffee, tea, pastries and food, with today's promotions.",
+        description: "Our full menu: coffee, savory dishes, patisserie and extras, with today's promotions.",
       },
       contact: {
         title: "Contact",

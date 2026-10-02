@@ -1,9 +1,10 @@
 import Image from "next/image";
+import DiscountBadge from "./DiscountBadge";
 import PriceTag from "./PriceTag";
 
 /**
- * One menu item: photo, name, description and price.
- * `item.pricing` must be added first with withPricing() (see lib/discounts.js).
+ * Photo card for one item (used for the Home featured items).
+ * The item needs an `image`, and `item.pricing` added with withPricing() (see lib/discounts.js).
  */
 export default function MenuItemCard({ item }) {
   const { pricing } = item;
@@ -18,11 +19,7 @@ export default function MenuItemCard({ item }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
         />
-        {pricing.discount && (
-          <span className="absolute top-3 left-3 rounded-full bg-secondary px-3 py-1 text-sm font-bold text-text">
-            -{pricing.percentOff}%
-          </span>
-        )}
+        <DiscountBadge pricing={pricing} className="absolute top-3 left-3" />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h3 className="text-xl font-bold">{item.name}</h3>

@@ -43,6 +43,13 @@ export const texts = {
     },
   },
 
+  menu: {
+    title: "Our menu",
+    intro: "Coffee first, always. Then something savory, something sweet, and a few extras to make it yours.",
+    filterLabel: "Filter by category",
+    all: "All",
+  },
+
   // Shared by the Home featured items and the Menu page
   menuCard: {
     originalPrice: "Original price",
