@@ -15,6 +15,12 @@
  *  - featured:    true to show it on the Home page (the first 3 are used)
  *  - image:       { src, alt }. Optional: only needed for featured items (Home cards)
  *
+ * Combos are items with an `includes` list. Each entry is:
+ *  - "item-id"                    a menu item (its name and price are used)
+ *  - { id: "item-id", qty: 2 }    a menu item, several units
+ *  - { name: "...", price: 4500 } something not sold alone on the menu
+ * The site adds up the regular prices and shows how much the customer saves.
+ *
  * Discounts are NOT set here. They live in data/discounts.js.
  */
 
@@ -43,10 +49,10 @@ export const categories = [
     image: { src: unsplash("1565958011703-44f9829ba187", 1600, 600), alt: "Slice of layered cake topped with raspberries" },
   },
   {
-    id: "extras",
-    label: "Extras",
-    description: "Make it your way.",
-    image: { src: unsplash("1511920170033-f8396924c348", 1600, 600), alt: "Espresso portafilter with ground coffee and beans" },
+    id: "combos",
+    label: "Combos",
+    description: "Breakfast and merienda classics, for less than ordering each item.",
+    image: { src: unsplash("1484723091739-30a097e8f929", 1600, 600), alt: "Brunch table with French toast, banana and blueberries" },
   },
 ];
 
@@ -217,40 +223,37 @@ export const menuItems = [
     category: "patisserie",
   },
 
-  // --- Extras ---
+  // --- Combos ---
   {
-    id: "extra-shot",
-    name: "Extra espresso shot",
-    description: "Add to any coffee.",
-    price: 1500,
-    category: "extras",
+    id: "desayuno-clasico",
+    name: "Desayuno clásico",
+    description: "The Argentine breakfast: coffee, medialunas and fresh juice.",
+    price: 9900,
+    category: "combos",
+    includes: ["cafe-con-leche", { id: "medialunas", qty: 2 }, { name: "Fresh orange juice", price: 4500 }],
   },
   {
-    id: "plant-milk",
-    name: "Plant-based milk",
-    description: "Almond or oat milk instead of regular milk.",
-    price: 1200,
-    category: "extras",
+    id: "combo-tostado",
+    name: "Combo tostado",
+    description: "A coffee, a fresh juice and our classic ham & cheese toastie.",
+    price: 13900,
+    category: "combos",
+    includes: ["cortado", { name: "Fresh orange juice", price: 4500 }, "tostado"],
   },
   {
-    id: "syrup",
-    name: "Flavored syrup",
-    description: "Vanilla, caramel or hazelnut.",
-    price: 1000,
-    category: "extras",
+    id: "merienda-dulce",
+    name: "Merienda dulce",
+    description: "Afternoon coffee with something sweet.",
+    price: 10500,
+    category: "combos",
+    includes: ["latte", "chocotorta"],
   },
   {
-    id: "dulce-de-leche",
-    name: "Dulce de leche",
-    description: "A generous spoonful on the side.",
-    price: 900,
-    category: "extras",
-  },
-  {
-    id: "whipped-cream",
-    name: "Whipped cream",
-    description: "On top of your coffee or cake.",
-    price: 900,
-    category: "extras",
+    id: "brunch",
+    name: "Brunch",
+    description: "For slow weekend mornings.",
+    price: 17900,
+    category: "combos",
+    includes: ["capuchino", "avocado-toast", { name: "Fresh orange juice", price: 4500 }],
   },
 ];

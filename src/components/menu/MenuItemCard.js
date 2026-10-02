@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DiscountBadge from "./DiscountBadge";
+import DiscountBadge, { dealHoverClasses } from "./DiscountBadge";
 import PriceTag from "./PriceTag";
 
 /**
@@ -8,9 +8,11 @@ import PriceTag from "./PriceTag";
  */
 export default function MenuItemCard({ item }) {
   const { pricing } = item;
+  // Discounted cards grow on hover to catch the eye.
+  const hover = pricing.discount ? dealHoverClasses : "";
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-surface">
+    <article className={`flex h-full flex-col overflow-hidden rounded-2xl bg-surface ${hover}`}>
       <div className="relative aspect-4/3">
         <Image
           src={item.image.src}

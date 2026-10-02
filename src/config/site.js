@@ -57,7 +57,7 @@ export const siteConfig = {
   contact: {
     address: "1234 Example Street, Palermo, Buenos Aires",
     phone: "+54 11 5555-0123",
-    email: "hello@emberandoak.example",
+    email: "codaagustin@gmail.com",
     // Google Maps > Share > Embed a map > copy the src="..." URL.
     // This simple "?q=...&output=embed" format also works without an API key.
     mapEmbedUrl: "https://www.google.com/maps?q=Palermo%20Soho%2C%20Buenos%20Aires&output=embed",
@@ -73,7 +73,7 @@ export const siteConfig = {
   // --- Social links ---------------------------------------------------
   // Remove an entry to hide that icon everywhere. Replace URLs with the client's profiles.
   social: [
-    { network: "instagram", label: "Instagram", url: "https://www.instagram.com/" },
+    { network: "instagram", label: "Instagram", url: "https://www.instagram.com/codaagustin/" },
     { network: "facebook", label: "Facebook", url: "https://www.facebook.com/" },
     { network: "whatsapp", label: "WhatsApp", url: "https://wa.me/5491155550123" },
   ],
@@ -88,7 +88,7 @@ export const siteConfig = {
     pages: {
       menu: {
         title: "Menu",
-        description: "Our full menu: coffee, savory dishes, patisserie and extras, with today's promotions.",
+        description: "Our full menu: coffee, savory dishes, patisserie and combos, with today's promotions.",
       },
       contact: {
         title: "Contact",
