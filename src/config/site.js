@@ -70,13 +70,6 @@ export const siteConfig = {
     { days: "Sunday", time: "9:00 – 14:00" },
   ],
 
-  // --- Designer credit ------------------------------------------------
-  // "Designed by ..." link in the footer. Set to null to hide it.
-  credit: {
-    name: "Agustín Coda",
-    url: "https://www.linkedin.com/in/agust%C3%ADn-coda-a54541238/",
-  },
-
   // --- Social links ---------------------------------------------------
   // Remove an entry to hide that icon everywhere. Replace URLs with the client's profiles.
   social: [
