@@ -55,6 +55,44 @@ export const texts = {
     },
   },
 
+  contact: {
+    title: "Contact",
+    intro: "Come say hi, give us a call, or join our list to hear about new offers first.",
+    info: {
+      title: "Visit us",
+      address: "Address",
+      phone: "Phone",
+      email: "Email",
+      hours: "Opening hours",
+      follow: "Follow us",
+    },
+    map: {
+      title: "Map showing the café location",
+    },
+    newsletter: {
+      title: "Get our news & offers",
+      subtitle: "Promotions, new menu items and events. No spam, unsubscribe anytime.",
+      fields: {
+        name: "Name",
+        phone: "Phone",
+        email: "Email",
+      },
+      optional: "(optional)",
+      consent: "I agree to receive news and offers by email or phone.",
+      submit: "Sign me up",
+      successTitle: "You're on the list!",
+      successMessage: "Thanks for signing up. We'll keep you posted on our offers.",
+      reset: "Sign up someone else",
+      errors: {
+        nameRequired: "Please enter your name.",
+        emailRequired: "Please enter your email.",
+        emailInvalid: "Please enter a valid email, like name@example.com.",
+        phoneInvalid: "Please enter a valid phone number (8 to 15 digits).",
+        consentRequired: "Please accept to receive our news.",
+      },
+    },
+  },
+
   // Shared by the Home featured items and the Menu page
   menuCard: {
     originalPrice: "Original price",

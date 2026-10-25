@@ -55,12 +55,13 @@ export const siteConfig = {
 
   // --- Contact ----------------------------------------------------------
   contact: {
-    address: "1234 Example Street, Palermo, Buenos Aires",
+    // Demo location: a public square, not a real business address.
+    address: "Praça do Comércio, Lisbon, Portugal",
     phone: "+54 11 5555-0123",
     email: "codaagustin@gmail.com",
     // Google Maps > Share > Embed a map > copy the src="..." URL.
     // This simple "?q=...&output=embed" format also works without an API key.
-    mapEmbedUrl: "https://www.google.com/maps?q=Palermo%20Soho%2C%20Buenos%20Aires&output=embed",
+    mapEmbedUrl: "https://www.google.com/maps?q=Pra%C3%A7a%20do%20Com%C3%A9rcio%2C%20Lisboa&z=16&output=embed",
   },
 
   // Opening hours, shown on Contact and in the footer.
@@ -92,7 +93,7 @@ export const siteConfig = {
       },
       contact: {
         title: "Contact",
-        description: "Find us, call us or send us a message. Address, opening hours and map.",
+        description: "Find us, call us or sign up for news and offers. Address, opening hours and map.",
       },
     },
   },
