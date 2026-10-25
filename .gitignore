@@ -44,3 +44,7 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 .claude/
+
+# Editor settings (JetBrains / VS Code)
+.idea/
+.vscode/
