@@ -8,7 +8,7 @@ const rowLayout = "flex items-start justify-between gap-4 py-4";
  * One line of the menu, like a café menu board:
  *   NAME  [-20%]                    $ 4.200
  *   What's in it
- * Discounted rows have a tinted background that pulses to catch the eye.
+ * Discounted rows have a tinted background and pulse (grow + thick border) to catch the eye.
  */
 export default function MenuItemRow({ item }) {
   const content = (
@@ -31,12 +31,7 @@ export default function MenuItemRow({ item }) {
   }
 
   return (
-    <DealHighlight
-      as="li"
-      className={`${rowLayout} my-1 rounded-xl px-4`}
-      offClassName="bg-secondary/15"
-      onClassName="relative z-10 scale-[1.03] bg-secondary/40 shadow-lg"
-    >
+    <DealHighlight as="li" className={`${rowLayout} my-2 rounded-xl bg-secondary/15 px-4`}>
       {content}
     </DealHighlight>
   );

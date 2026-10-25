@@ -35,7 +35,7 @@ export default function MenuItemCard({ item }) {
 
   // Discounted cards pulse to catch the eye.
   return (
-    <DealHighlight as="article" className={cardStyle} onClassName="scale-[1.03] shadow-xl ring-2 ring-secondary">
+    <DealHighlight as="article" className={cardStyle}>
       {content}
     </DealHighlight>
   );

@@ -13,7 +13,7 @@ export default function ComboCard({ item }) {
   // Compared with the final price, so a promo on the combo increases the savings too.
   const savings = regularPrice - item.pricing.final;
   const labels = texts.menu.combo;
-  const cardStyle = "my-2 rounded-2xl border-2 border-secondary bg-surface p-5";
+  const cardStyle = "my-2 rounded-2xl bg-surface p-5";
 
   const content = (
     <>
@@ -53,8 +53,10 @@ export default function ComboCard({ item }) {
     </>
   );
 
-  // Like any other item, a combo only pulses when a promotion applies to it.
-  if (!item.pricing.discount) return <li className={cardStyle}>{content}</li>;
+  // A combo is a deal by itself: it pulses whenever it's cheaper than buying separately
+  // (or when a promotion applies to it).
+  const isDeal = savings > 0 || Boolean(item.pricing.discount);
+  if (!isDeal) return <li className={`${cardStyle} border-2 border-secondary`}>{content}</li>;
 
   return (
     <DealHighlight as="li" className={cardStyle}>
